@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+}
+
+/* Navbar Section */
+
+header {
+  background-color: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 7rem;
+  z-index: 2;
+  display: flex;
+}
+
+.logo {
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 0.2rem;
+  width: 2rem;
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 0.7rem;
+}
+
+.nav-toggle-label span::after {
+  top: 0.7rem;
+}
+
+nav {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.4s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+nav li {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+nav a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out 0.25s;
+}
+
+/* Welcome Section */
+
+#welcome-section {
+  background-image: repeating-linear-gradient(45deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(64,83%,54%,0.05) 0px, hsla(64,83%,54%,0.05) 1px,transparent 1px, transparent 11px,hsla(64,83%,54%,0.05) 11px, hsla(64,83%,54%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(41, 27, 158),rgb(249, 77, 212));
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+#welcome-section::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(0.4rem);
+}
+
+.welcome-section-header {
+  color: rgb(255, 255, 255);
+  text-align: start;
+  margin: auto;
+}
+
+.welcome-section-header h1 {
+  font-size: 4vmax;
+}
+
+.welcome-section-header span {
+  font-size: 2vmax;
+}
+
+/* Projects Section */
+
+.projects-section {
+  background-color: rgb(0, 0, 0);
+  padding: 8rem 4rem;
+}
+
+.projects-section-header {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+}
+
+.project-tile {
+  position: relative;
+  background: rgb(33, 37, 41);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.project-tile span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(0.25rem);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.project-tile span:hover {
+  opacity: 1;
+}
+
+.project-image {
+  display: block;
+  max-width: 100%;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Contact Section */
+
+.contact-section {
+  background-image: repeating-linear-gradient(45deg, hsla(45,100%,71%,0.05) 0px, hsla(45,100%,71%,0.05) 1px,transparent 1px, transparent 11px,hsla(45,100%,71%,0.05) 11px, hsla(45,100%,71%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, hsla(45,100%,71%,0.05) 0px, hsla(45,100%,71%,0.05) 1px,transparent 1px, transparent 11px,hsla(45,100%,71%,0.05) 11px, hsla(45,100%,71%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(45deg, hsla(45,100%,71%,0.05) 0px, hsla(45,100%,71%,0.05) 1px,transparent 1px, transparent 11px,hsla(45,100%,71%,0.05) 11px, hsla(45,100%,71%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(45,100%,71%,0.05) 0px, hsla(45,100%,71%,0.05) 1px,transparent 1px, transparent 11px,hsla(45,100%,71%,0.05) 11px, hsla(45,100%,71%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(135, 90, 137),rgb(64, 32, 164));
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 5rem 2rem 15rem;
+}
+
+.contact-section-header {  
+  color: rgb(255, 255, 255);
+}
+
+.contact-section-header h2 {
+  font-size: 4vmax;
+}
+
+.contact-section-header p {
+  font-size: 2vmax;
+  margin-top: 1rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2vmax;
+  transition: transform 0.2s ease-out;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.contact-details:hover {
+  transform: translateY(0.8rem);
+}
+
+.contact-links span {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+/* Footer Section */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+}
+
+.footer {
+  margin: auto;
+}
+
+.footer i {
+  color: rgb(220,53,69);
+}
+
+/* Responsive Breakpoint */
+
+@media screen and (max-width:768px) {
+  .footer p {
+    display: block;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .projects-section {
+    padding: 8rem 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(60rem, 7fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3rem;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 0.3rem;
+    width: 2.5rem;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in 0.25s;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+}

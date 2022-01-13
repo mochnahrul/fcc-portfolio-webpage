@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Webpage | Mochamad Nahrul</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/9af64d2009.js" crossorigin="anonymous"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header Section Begin -->
+  <header id="header">
+    <h1 class="logo">Nahrul.</h1>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </header>
+  <!-- Header End -->
+
+  <!-- Welcome Section Begin -->
+  <section id="welcome-section">
+    <div class="welcome-section-header">
+      <h1>Hello, I am Nahrul</h1>
+      <span id="typed"></span>
+    </div>
+  </section>
+  <!-- Welcome End -->
+
+  <!-- Projects Section Begin -->
+  <section id="projects" class="projects-section">
+    <h2 class="projects-section-header">These are some of my projects</h2>
+    <div class="projects-grid" style="overflow: hidden;">
+      <a href="#" target="_blank" class="project-tile" data-aos="fade-down" data-aos-duration="1000">
+        <img class="project-image" src="img/tribute-page.jpg" alt="tribute-page">
+        <p class="project-title">
+          Tribute Page
+        </p>
+        <span></span>
+      </a>
+      <a href="#" target="_blank" class="project-tile" data-aos="fade-down" data-aos-duration="1000">
+        <img class="project-image" src="img/survey-form.jpg" alt="survey-form">
+        <p class="project-title">
+          Survey Form
+        </p>
+        <span></span>
+      </a>
+      <a href="#" target="_blank" class="project-tile" data-aos="fade-down" data-aos-duration="1000">
+        <img class="project-image" src="img/landing-page.jpg" alt="landing-page">
+        <p class="project-title">
+          Landing Page
+        </p>
+        <span></span>
+      </a>
+      <a href="#" target="_blank" class="project-tile" data-aos="fade-down" data-aos-duration="1000">
+        <img class="project-image" src="img/documentation-page.jpg" alt="documentation-page">
+        <p class="project-title">
+          Documentation Page
+        </p>
+        <span></span>
+      </a>
+    </div>
+  </section>
+  <!-- Projects End -->
+
+  <!-- Contact Section Begin -->
+  <section id="contact" class="contact-section">
+    <div class="contact-section-header">
+      <h2>Let's work together...</h2>
+      <p>How do you take your coffee?</p>
+    </div>
+    <div class="contact-links">
+      <a id="profile-link" href="https://github.com/mochnahrul" target="_blank" class="contact-details">
+        <i class="fab fa-github"><span>GitHub</span></i>
+      </a>
+      <a href="https://www.instagram.com/moch_nahrul" target="_blank" class="contact-details">
+        <i class="fab fa-instagram"><span>Instagram</span></i>
+      </a>
+      <a href="mailto:mochnahrul.wd@gmail.com" target="_blank" class="contact-details">
+        <i class="fas fa-at"><span>Send a mail</span></i>
+      </a>
+    </div>
+  </section>
+  <!-- Contact End -->
+
+  <!-- Footer Section Begin -->
+  <footer>
+    <div class="footer">
+      <p>Created with <i class="fas fa-heart"></i> by Mochamad Nahrul</p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- JavaScript -->
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ['Web designer', 'Front-end developer'],
+      typeSpeed: 50,
+      startDelay: 50,
+      backSpeed: 50,
+      loop: true
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+</body>
+</html>
